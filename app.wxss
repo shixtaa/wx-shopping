@@ -13,7 +13,7 @@ page,view,text,swiper,swiper-item,image,navigator{
 */
 page{
   /* 定义主题颜色 */
-  --themeColor:#d6e6f2;
+  --themeColor:#686de0;
   /* 定义统一的字体大小 假设设计稿大小是 375px 
   1px=2rpx；
   14px=28rpx

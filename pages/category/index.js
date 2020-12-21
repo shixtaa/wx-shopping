@@ -1,66 +1,49 @@
 // pages/category/index.js
+import {request} from  "../../request/index"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    leftMenuList:[],
+    rightContent:[],
+    //当前选中的菜单tab
+    currentIndex:0,
+    //右侧内容的滚动条距离顶部的距离
+    scrollTop:0
   },
-
+  Cates:[],
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCategories()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getCategories:function(){
+    request({
+      url:'https://api-hmugo-web.itheima.net/api/public/v1/categories'
+    })
+    .then((res)=>{
+      this.Cates=res.data.message
+      let leftMenuList=this.Cates.map((i)=>{
+        return i.cat_name
+      })
+      let rightContent=this.Cates[0].children;
+      this.setData({
+        leftMenuList,
+        rightContent
+      })
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleItemTab:function(e){
+    let index=e.target.dataset.index
+    this.setData({
+      currentItem:index,
+      rightContent:this.Cates[index].children,
+      scrollTop:0
+    })
   }
 })

@@ -29,16 +29,18 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
+    "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.14.1",
-  "appid": "wxfd21da597bf6e9d2",
+  "libVersion": "2.12.2",
+  "appid": "wx3635320d40dacac9",
   "projectname": "shopping",
   "debugOptions": {
     "hidedInDevtools": []
@@ -48,23 +50,23 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "分类页面",
+          "pathName": "pages/category/index",
+          "scene": null
+        }
+      ]
     }
   }
 }
