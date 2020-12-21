@@ -1,0 +1,16 @@
+<view class="pyg_index">
+  <!-- 搜索框 -->
+  <SearchInput></SearchInput>
+  <view class="index_swiper">
+    <swiper indicator-dots autoplay="true" circular="true" indicator-active-color="#eee">
+      <swiper-item 
+      wx:for="{{swiperList}}"
+      wx:key="goods_id"
+      >
+        <navigator>
+          <image mode="widthFix" src="{{item.image_src}}" />
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

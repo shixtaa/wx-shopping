@@ -1,0 +1,7 @@
+<view class="search_input">
+  <!-- <input   type="text" placeholder="搜索" />  -->
+  <navigator url="/pages/search/index" open-type="navigate">
+    <text class="iconfont icon-search"></text>
+    <text>搜索</text>
+  </navigator>
+</view>
